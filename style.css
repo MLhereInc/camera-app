@@ -15,17 +15,17 @@ html, body{
       filter: FlipH;
   }
   #shoot{
-      left: calc(50% - 100px);
+      left: calc(50% - 150px);
   }
   #submit{
     left: calc(50%);
   }
   #return{
-    left: calc(50% + 100px);
+    left: calc(50% + 150px);
   }
 
   .buttons{
-    width: 70px;
+    width: 120px;
     background-color: black;
     color: white;
     font-size: 16px;
