@@ -14,7 +14,7 @@ html, body{
       transform: scaleX(-1);
       filter: FlipH;
   }
-  #camera--trigger{
+  #camera--trigger-{
       width: 200px;
       background-color: black;
       color: white;
@@ -28,13 +28,26 @@ html, body{
       bottom: 30px;
       left: calc(50% - 100px);
   }
+  .buttons{
+    width: 70px;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    padding: 15px 20px;
+    text-align: center;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    bottom: 30px;
+    }
+
   .taken{
-      height: 100px!important;
-      width: 100px!important;
-      transition: all 0.5s ease-in;
-      border: solid 3px white;
-      box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
-      top: 20px;
-      right: 20px;
-      z-index: 2;
-  }
+        height: 100px!important;
+        width: 100px!important;
+        transition: all 0.5s ease-in;
+        border: solid 3px white;
+        box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+        top: 20px;
+        right: 20px;
+        z-index: 2;
+    }
