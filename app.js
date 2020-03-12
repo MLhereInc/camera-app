@@ -31,9 +31,15 @@ cameraTrigger.onclick = function() {
 
 submitTrigger.onclick = function() {
     data = cameraOutput.src
-    
-    $.post( "https://ec2-50-18-222-52.us-west-1.compute.amazonaws.com:9013/inference", data, function( ret ) {
-        alert( ret );
+
+    $.ajax({
+        url: 'https://ec2-50-18-222-52.us-west-1.compute.amazonaws.com:9013/inference',
+        type: 'POST',
+        contentType: 'application/octet-stream',  
+        data: data,
+        processData: false
+    }).done(function(ret) {
+        alert(ret);
     });
 
     cameraSensor.width = cameraView.videoWidth;
