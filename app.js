@@ -36,7 +36,6 @@ function getRearCameraID(){
             //console.log("no suitable camera, getting the last one");
             final = DEVICES[totalCameras-1];
         };
-
         //Set the constraints and call getUserMedia
         var constraints = {
             audio: false, 
