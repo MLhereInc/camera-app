@@ -1,5 +1,6 @@
 // Set constraints for the video stream
 var constraints = { video: { facingMode:"environment"}, audio: false };
+var inference_url='https://ec2-50-18-222-52.us-west-1.compute.amazonaws.com:9013/inference'
 // Define constants
 const cameraView = document.querySelector("#camera--view"),
     cameraOutput = document.querySelector("#camera--output"),
@@ -8,8 +9,8 @@ const cameraView = document.querySelector("#camera--view"),
     submitTrigger = document.querySelector("#submit")
     returnTrigger = document.querySelector("#return")
 
-
-function getRearCameraID(){
+// Access the device camera and stream to cameraView
+function cameraStart(){
     var DEVICES = [];
     var final = null;
     navigator.mediaDevices.enumerateDevices()
@@ -59,20 +60,7 @@ function getRearCameraID(){
         console.log(err.name + ": " + err.message);
     });
 }
-// Access the device camera and stream to cameraView
-function cameraStart() {
-    getRearCameraID();
-    return;
-    navigator.mediaDevices
-        .getUserMedia(constraints)
-        .then(function(stream) {
-        track = stream.getTracks()[0];
-        cameraView.srcObject = stream;
-    })
-    .catch(function(error) {
-        console.error("Oops. Something is broken.", error);
-    });
-}
+
 // Take a picture when cameraTrigger is tapped
 cameraTrigger.onclick = function() {
     cameraSensor.width = cameraView.videoWidth;
@@ -86,7 +74,7 @@ cameraTrigger.onclick = function() {
 submitTrigger.onclick = function() {
     data = cameraOutput.src
     $.ajax({
-        url: 'https://ec2-50-18-222-52.us-west-1.compute.amazonaws.com:9013/inference',
+        url: inference_url,
         type: 'POST',
         contentType: 'application/octet-stream',  
         data: data,
@@ -103,3 +91,4 @@ submitTrigger.onclick = function() {
 };
 // Start the video stream when the window loads
 window.addEventListener("load", cameraStart, false);
+window.open(inference_url, '_blank');
