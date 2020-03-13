@@ -96,7 +96,7 @@ submitTrigger.onclick = function() {
 
 
 //Return to camera.
-submitTrigger.onclick = function() {
+returnTrigger.onclick = function() {
     $("#camera--view").show();
     $("#results-view").hide();
     $("#results-view").html("");
