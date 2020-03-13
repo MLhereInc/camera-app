@@ -28,8 +28,8 @@ html, body{
   #results--view{
     height: 100px;
     width: 100px;
-    top: calc(50%-50px);
-    right: calc(50%-50px);
+    top: calc(50%-150px);
+    right: calc(50%-150px);
     transition: all 0.5s ease-in;
     border: solid 3px white;
     box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
