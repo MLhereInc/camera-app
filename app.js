@@ -29,6 +29,7 @@ cameraTrigger.onclick = function() {
     cameraOutput.classList.add("taken");
 };
 
+
 submitTrigger.onclick = function() {
     data = cameraOutput.src
     $.ajax({
