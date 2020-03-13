@@ -31,7 +31,6 @@ cameraTrigger.onclick = function() {
 
 submitTrigger.onclick = function() {
     data = cameraOutput.src
-
     $.ajax({
         url: 'https://ec2-50-18-222-52.us-west-1.compute.amazonaws.com:9013/inference',
         type: 'POST',
