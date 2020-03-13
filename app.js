@@ -93,6 +93,7 @@ submitTrigger.onclick = function() {
     cameraOutput.classList.add("taken");
 };
 
+//Return to camera.
 submitTrigger.onclick = function() {
     $("camera--view").show();
     $("results-view").hide();
