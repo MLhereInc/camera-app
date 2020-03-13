@@ -83,7 +83,7 @@ submitTrigger.onclick = function() {
         $("#camera--view").hide();
         $("#camera--sensor").hide();
         $("#results--view").show();
-        $("#results--view").html(ret["results"][0]);
+        $("#results--view").html(JSON.parse(ret)["results"][0]);
         //alert(ret);
     });
 
