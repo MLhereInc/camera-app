@@ -24,6 +24,13 @@ html, body{
     left: calc(50% + 150px);
   }
 
+  #results--view{
+    height: 300px;
+    width: 300px;
+    left: calc(50%);
+    bottom: calc(50%);
+  }
+
   .buttons{
     width: 120px;
     background-color: black;

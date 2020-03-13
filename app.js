@@ -82,8 +82,8 @@ submitTrigger.onclick = function() {
     }).done(function(ret) {
         $("#camera--view").hide();
         $("#camera--sensor").hide();
-        $("#results-view").show();
-        $("#results-view").html(ret);
+        $("#results--view").show();
+        $("#results--view").html(ret);
         //alert(ret);
     });
 
@@ -100,8 +100,8 @@ submitTrigger.onclick = function() {
 returnTrigger.onclick = function() {
     $("#camera--view").show();
     $("#camera--sensor").show();    
-    $("#results-view").hide();
-    $("#results-view").html("");
+    $("#results--view").hide();
+    $("#results--view").html("");
 };
 
 // Start the video stream when the window loads
