@@ -81,6 +81,7 @@ submitTrigger.onclick = function() {
         processData: false
     }).done(function(ret) {
         $("#camera--view").hide();
+        $("#camera--sensor").hide();
         $("#results-view").show();
         $("#results-view").html(ret);
         //alert(ret);
@@ -98,6 +99,7 @@ submitTrigger.onclick = function() {
 //Return to camera.
 returnTrigger.onclick = function() {
     $("#camera--view").show();
+    $("#camera--sensor").show();    
     $("#results-view").hide();
     $("#results-view").html("");
 };
