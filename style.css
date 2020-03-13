@@ -15,18 +15,18 @@ html, body{
       filter: FlipH;
   }
   #shoot{
-      left: calc(50% - 150px);
+      left: calc(50% - 100px);
   }
   #submit{
     left: calc(50%);
   }
   #return{
-    left: calc(50% + 150px);
+    left: calc(50% + 100px);
   }
 
   #results--view{
-    height: 100px;
-    width: 100px;
+    height: 150px;
+    width: 150px;
     top: calc(50%-150px);
     right: calc(50%-150px);
     transition: all 0.5s ease-in;
