@@ -15,13 +15,13 @@ html, body{
       filter: FlipH;
   }
   #shoot{
-      left: calc(50% - 150px);
+      left: calc(50% - 100px);
   }
   #submit{
     left: calc(50%);
   }
   #return{
-    left: calc(50% + 150px);
+    left: calc(50% + 100px);
   }
 
   #results--view{
