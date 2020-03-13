@@ -80,9 +80,9 @@ submitTrigger.onclick = function() {
         data: data,
         processData: false
     }).done(function(ret) {
-        $("#camera--view").hide();
-        $("#camera--sensor").hide();
-        $("#results--view").show();
+        $("#camera--view").css("visibility", "hidden");
+        $("#camera--sensor").css("visibility", "hidden");
+        $("#results--view").css("visibility", "visible");
         $("#results--view").html(JSON.parse(ret)["results"][0]);
         //alert(ret);
     });
@@ -98,9 +98,9 @@ submitTrigger.onclick = function() {
 
 //Return to camera.
 returnTrigger.onclick = function() {
-    $("#camera--view").show();
-    $("#camera--sensor").show();    
-    $("#results--view").hide();
+    $("#camera--view").css("visibility", "visible");
+    $("#camera--sensor").css("visibility", "visible");
+    $("#results--view").css("visibility", "hidden");
     $("#results--view").html("");
 };
 
