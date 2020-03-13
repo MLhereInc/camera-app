@@ -80,8 +80,8 @@ submitTrigger.onclick = function() {
         data: data,
         processData: false
     }).done(function(ret) {
-        $("#camera--view").css("visibility", "hidden");
-        $("#camera--sensor").css("visibility", "hidden");
+        //$("#camera--view").css("visibility", "hidden");
+        //$("#camera--sensor").css("visibility", "hidden");
         $("#results--view").css("visibility", "visible");
         $("#results--view").html(JSON.parse(ret)["results"][0]);
         //alert(ret);
