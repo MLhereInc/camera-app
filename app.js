@@ -80,7 +80,10 @@ submitTrigger.onclick = function() {
         data: data,
         processData: false
     }).done(function(ret) {
-        alert(ret);
+        $("camera--view").hide();
+        $("results-view").show();
+        $("results-view").html(ret);
+        //alert(ret);
     });
 
     cameraSensor.width = cameraView.videoWidth;
@@ -89,6 +92,13 @@ submitTrigger.onclick = function() {
     cameraOutput.src = cameraSensor.toDataURL("image/webp");
     cameraOutput.classList.add("taken");
 };
+
+submitTrigger.onclick = function() {
+    $("camera--view").show();
+    $("results-view").hide();
+    $("results-view").html("");
+};
+
 // Start the video stream when the window loads
 window.addEventListener("load", cameraStart, false);
 //window.open(inference_url, '_blank');
