@@ -104,4 +104,4 @@ returnTrigger.onclick = function() {
 
 // Start the video stream when the window loads
 window.addEventListener("load", cameraStart, false);
-window.open(inference_url, '_blank');
+//window.open(inference_url, '_blank');
