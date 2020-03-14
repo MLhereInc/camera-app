@@ -23,14 +23,27 @@
         <div id="results--view"></div>
         <!-- Camera output -->
         <img src="//:0" alt="" id="camera--output">
-        <!-- Camera trigger -->
-        <input id="shoot" type="image" src="images/camera.png" class="buttons-img"/>
-        <input id="submit" type="image" src="images/submit.png" class="buttons-img"/>
-        <input id="return" type="image" src="images/return.png" class="buttons-img"/>   
         <!--
         <button id="shoot" class="buttons">Shoot</button><button id="submit" class="buttons">Submit</button><button id="return" class="buttons">Returns</button>
         -->     
     </main>
+    <!-- Camera trigger -->
+
+    <div id="buttons-div">
+        <div style="float: left;">
+            <input id="shoot" type="image" src="images/camera.png" class="buttons-img"/>
+            <input id="submit" type="image" src="images/submit.png" class="buttons-img"/>
+            <input id="return" type="image" src="images/return.png" class="buttons-img"/>   
+        </div>
+        <div style="float: right;">
+            <select id="type-select" class="select-css">
+                <option value="0">Rose</option>
+                <option value="1">Phlox</option>
+                <option value="2">Viola</option>
+            </select>
+            <input id="feedback" type="image" src="images/feedback.png" class="buttons-img"/>               
+        </div>
+    </div>
     <!-- Reference to your JavaScript file -->
     <script src="app.js"></script>
 </body>

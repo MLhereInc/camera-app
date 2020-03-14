@@ -86,12 +86,13 @@ submitTrigger.onclick = function() {
         $("#results--view").html(JSON.parse(ret)["results"][0]);
         //alert(ret);
     });
-
+    /*
     cameraSensor.width = cameraView.videoWidth;
     cameraSensor.height = cameraView.videoHeight;
     cameraSensor.getContext("2d").drawImage(cameraView, 0, 0);
     cameraOutput.src = cameraSensor.toDataURL("image/webp");
     cameraOutput.classList.add("taken");
+    */
 };
 
 //Return to camera.
@@ -104,4 +105,4 @@ returnTrigger.onclick = function() {
 
 // Start the video stream when the window loads
 window.addEventListener("load", cameraStart, false);
-window.open(inference_url, '_blank');
+//window.open(inference_url, '_blank');
