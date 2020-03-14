@@ -36,6 +36,8 @@ html, body{
     text-align: center;
     visibility: hidden;
     font-size: large;
+    position: fixed;
+    background-color: gainsboro;  
   }
 
   .tmp2{
