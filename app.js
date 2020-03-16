@@ -1,13 +1,15 @@
 // Set constraints for the video stream
 var constraints = { video: { facingMode:"environment"}, audio: false };
 var inference_url='https://ec2-50-18-222-52.us-west-1.compute.amazonaws.com:9013/inference'
+var feedback_url = "https://wpro6i5u90.execute-api.us-west-1.amazonaws.com/api/put_object"
 // Define constants
 const cameraView = document.querySelector("#camera--view"),
     cameraOutput = document.querySelector("#camera--output"),
     cameraSensor = document.querySelector("#camera--sensor"),
-    cameraTrigger = document.querySelector("#shoot")
-    submitTrigger = document.querySelector("#submit")
-    returnTrigger = document.querySelector("#return")
+    cameraTrigger = document.querySelector("#shoot"),
+    submitTrigger = document.querySelector("#submit"),
+    returnTrigger = document.querySelector("#return"),
+    feedbackTrigger = document.querySelector("#feedback")
 
 // Access the device camera and stream to cameraView
 function cameraStart(){
@@ -59,7 +61,7 @@ function cameraStart(){
     .catch(function(err) {
         console.log(err.name + ": " + err.message);
     });
-}
+};
 
 // Take a picture when cameraTrigger is tapped
 cameraTrigger.onclick = function() {
@@ -69,7 +71,6 @@ cameraTrigger.onclick = function() {
     cameraOutput.src = cameraSensor.toDataURL("image/webp");
     cameraOutput.classList.add("taken");
 };
-
 
 submitTrigger.onclick = function() {
     data = cameraOutput.src
@@ -86,13 +87,39 @@ submitTrigger.onclick = function() {
         $("#results--view").html(JSON.parse(ret)["results"][0]);
         //alert(ret);
     });
-    /*
-    cameraSensor.width = cameraView.videoWidth;
-    cameraSensor.height = cameraView.videoHeight;
-    cameraSensor.getContext("2d").drawImage(cameraView, 0, 0);
-    cameraOutput.src = cameraSensor.toDataURL("image/webp");
-    cameraOutput.classList.add("taken");
-    */
+};
+
+feedbackTrigger.onclick = function() {
+    imgData = cameraOutput.src
+    var object_key = new Date().getTime() + ".png"
+    data = {
+        "auth_data":{"user_name":"dev105", "auth_data":"key"},
+        "object":{
+            "object_key":object_key,
+            "type":"png",
+            "content":imgData.substring(23)
+        },
+        "meta_data":{
+            "label":$("#type-select").val()
+        }
+    }
+
+    $.ajax({
+        url: feedback_url,
+        type: 'POST',
+        contentType: 'application/json',  
+        data: JSON.stringify(data),
+        dataType: "json"
+        //processData: false
+    }).done(function(ret) {
+        if("undefined" === typeof(ret["error"])){
+            alert("OK");
+        }else{
+            alert(ret["error"])
+            // The property exists
+        }
+        //alert(ret);
+    });
 };
 
 //Return to camera.
