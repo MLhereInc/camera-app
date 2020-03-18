@@ -95,7 +95,7 @@ feedbackTrigger.onclick = function() {
     data = {
         "auth_data":{"user_name":"dev105", "auth_data":"key"},
         "object":{
-            "object_key":object_key,
+            "object_key":$("#type-select").val() + "/" + object_key,
             "type":"png",
             "content":imgData.substring(23)
         },
