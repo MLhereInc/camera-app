@@ -1,8 +1,8 @@
 // Set constraints for the video stream
 var constraints = { video: { facingMode:"environment"}, audio: false };
-var inference_url='https://ec2-50-18-222-52.us-west-1.compute.amazonaws.com:9013/inference'
+var inference_url='https://ec2-50-18-222-52.us-west-1.compute.amazonaws.com:9013/inference';
 //var feedback_url = "https://wpro6i5u90.execute-api.us-west-1.amazonaws.com/api/put_object" //EC2 DEV
-var feedback_url = "https://kzkcpifiv6.execute-api.us-west-1.amazonaws.com/api/put_object" //mlhere.io
+var feedback_url = "https://kzkcpifiv6.execute-api.us-west-1.amazonaws.com/api/put_object"; //mlhere.io
 // Define constants
 const cameraView = document.querySelector("#camera--view"),
     cameraOutput = document.querySelector("#camera--output"),
@@ -10,7 +10,7 @@ const cameraView = document.querySelector("#camera--view"),
     cameraTrigger = document.querySelector("#shoot"),
     submitTrigger = document.querySelector("#submit"),
     returnTrigger = document.querySelector("#return"),
-    feedbackTrigger = document.querySelector("#feedback")
+    feedbackTrigger = document.querySelector("#feedback");
 
 // Access the device camera and stream to cameraView
 function cameraStart(){
