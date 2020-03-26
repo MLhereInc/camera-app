@@ -94,7 +94,7 @@ feedbackTrigger.onclick = function() {
     imgData = cameraOutput.src
     var object_key = new Date().getTime() + ".png"
     data = {
-        "auth_data":{"user_name":"dev105", "auth_data":"key"},
+        "auth_data":{"user_name":"mlhere.io@gmail.com", "auth_data":"key"},
         "object":{
             "object_key":$("#type-select").val() + "/" + object_key,
             "type":"png",
